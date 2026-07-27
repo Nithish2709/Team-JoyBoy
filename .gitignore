@@ -1,0 +1,41 @@
+# =============================================================================
+# PDS Sentinel AI – Root .gitignore
+# =============================================================================
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Compiled
+*.pyc
+*.so
