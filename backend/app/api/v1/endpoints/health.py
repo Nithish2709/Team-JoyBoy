@@ -5,7 +5,7 @@ from app.db.database import get_async_db
 from app.db.redis import check_redis_health
 from loguru import logger
 
-router = APIRouter()
+router = APIRouter(prefix="/health", tags=["Health"])
 
 @router.get("", status_code=status.HTTP_200_OK)
 async def get_general_health() -> dict:

@@ -5,8 +5,11 @@ from sqlalchemy.ext.asyncio import async_engine_from_config
 from alembic import context
 
 # Import target declarative metadata for autogenerate support
-from app.db.database import Base
+from app.db.database import Base, import_models
 from app.core.config import settings
+
+# Register all models into Base.metadata before autogenerate reads it
+import_models()
 
 # This is the Alembic Config object
 config = context.config

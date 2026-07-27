@@ -32,3 +32,10 @@ async def get_async_db() -> AsyncGenerator[AsyncSession, None]:
             yield session
         finally:
             await session.close()
+
+
+# Import all models here so Base.metadata is populated for Alembic auto-generation.
+# This import must come AFTER Base is defined to avoid circular imports.
+def import_models() -> None:
+    """Trigger model registration into Base.metadata."""
+    import app.models  # noqa: F401
